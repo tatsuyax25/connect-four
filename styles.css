@@ -29,6 +29,7 @@ body {
   border-radius: 50%;
 }
 
-#how-to-play p.centered {
-  text-align: center;
+#how-to-play p {
+  width: 80%;
+  margin: 0 auto;
 }
