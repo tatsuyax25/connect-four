@@ -6,6 +6,19 @@ body {
   background: rgb(2, 0, 36);
   background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 30%, rgba(0, 181, 255, 1) 68%);
   color: whitesmoke;
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+#board {
+  display: grid;
+  grid-template-columns: repeat(7, 80px);
+  grid-template-rows: repeat(6, 80px);
+  margin: 0 auto;
 }
 
 .cell {
@@ -16,8 +29,3 @@ body {
   border-radius: 50%;
 }
 
-#board {
-  display: grid;
-  grid-template-columns: repeat(7, 80px);
-  grid-template-rows: repeat(6, 80px);
-}
