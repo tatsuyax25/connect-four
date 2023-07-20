@@ -41,17 +41,3 @@ body {
   margin: 0 auto;
   text-shadow: 2px 2px #000000;
 }
-
-@media only screen and (max-width: 600px) {
-  /* styles for mobile devices */
-  header h1 {
-    font-size: 24px;
-  }
-}
-
-@media only screen and (min-width: 601px) and (max-width: 900px) {
-  /* styles for tablet devices */
-  header h1 {
-    font-size: 36px;
-  }
-}
