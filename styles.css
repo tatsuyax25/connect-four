@@ -18,7 +18,10 @@ body {
   display: grid;
   grid-template-columns: repeat(7, 80px);
   grid-template-rows: repeat(6, 80px);
+  background-color: #4682B4;
   margin: 70px 0;
+  border-radius: 10px;
+  padding: 10px;
 }
 
 .cell {
