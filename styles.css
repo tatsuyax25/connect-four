@@ -1,6 +1,6 @@
-/* header {
-  background-color: #ADD8E6;
-} */
+header h1 {
+  text-shadow: 2px 2px #000000;
+}
 
 body {
   background: rgb(2, 0, 36);
@@ -32,7 +32,12 @@ body {
   border-radius: 50%;
 }
 
+#how-to-play {
+  text-shadow: 2px 2px #000000;
+}
+
 #how-to-play p {
   width: 80%;
   margin: 0 auto;
+  text-shadow: 2px 2px #000000;
 }
