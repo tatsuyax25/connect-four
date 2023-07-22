@@ -63,7 +63,16 @@ button:hover {
   color: #fff;
   padding: 10px;
   border-radius: 5px;
+  border: 2px solid black;
   text-align: center !important;
+}
+
+.player-score.left {
+  background-color: red;
+}
+
+.player-score.right {
+  background-color: yellow;
 }
 
 .left {
@@ -77,6 +86,7 @@ button:hover {
 .player-score h3, .player-score p {
   margin: 0;
   font-size: 20px;
+  text-shadow: 2px 2px #000000;
 }
 
 /* How to play */
