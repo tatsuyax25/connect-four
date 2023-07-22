@@ -21,19 +21,27 @@ document.querySelectorAll('.cell').forEach(cell => {
   cell.addEventListener('click', makeMove);
 });
 
-// To start the game
-const startButton = document.querySelector('#start');
-startButton.addEventListener('click', startGame);
-
+// Define the startGame function
 function startGame() {
+  // Reset the game board
+  board = [
+    [0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0]
+  ];
 
-}
+  // Set the current player to player 1
+  currentPlayer = 1;
 
-// To reset the game if the game ends in a tie
+  // Update the UI to show the current player
+  updateCurrentPlayer();
+};
 
-const resetButton = document.querySelector('#reset');
-resetButton.addEventListener('click', resetGame);
-
-function resetGame() {
-  
-}
+// Define the updateCurrentPlayer function
+function updateCurrentPlayer() {
+  // Update the UI to show the current player
+  document.querySelector('#current-player').textContent = `Player ${currentPlayer}`;
+};
