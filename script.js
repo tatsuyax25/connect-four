@@ -15,6 +15,12 @@ let scores = [0, 0];
 document.querySelector('#start').addEventListener('click', startGame);
 document.querySelector('#reset').addEventListener('click', resetGame);
 
+
+// Add event listeners to the game cells
+document.querySelectorAll('.cell').forEach(cell => {
+  cell.addEventListener('click', makeMove);
+});
+
 // To start the game
 const startButton = document.querySelector('#start');
 startButton.addEventListener('click', startGame);
