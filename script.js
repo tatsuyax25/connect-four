@@ -152,3 +152,33 @@ function checkGameOver() {
   // The game is not over
   return false;
 };
+
+// Define the checkWin function
+function checkWin() {
+  // check for a win
+};
+
+// Define the checkTie function
+function checkTie() {
+  // Check for a tie
+};
+
+// Define the endGame function
+function endGame() {
+  // Check if there is a winner
+  if (checkWin()) {
+    // Update the scores
+    scores[currentPlayer - 1]++;
+
+    // Update the UI to show the winner and the updated scores
+    document.querySelector('#winner').textContent = `Player ${currentPlayer} wins!`;
+    document.querySelector('#player1-score').textContent = scores[0];
+    document.querySelector('#player2-score').textContent = scores[1];
+  } else {
+    // Update the UI to show that the game ended in a tie
+    document.querySelector('#winner').textContent = `It's a tie!`;
+  }
+
+  // Set gameOver to true
+  gameOver = true;
+};
