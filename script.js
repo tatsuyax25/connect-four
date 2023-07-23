@@ -45,7 +45,6 @@ function resetGame() {
     ];
 
     // Set the current player to player 1
-
     currentPlayer = 1;
 
     // Update the UI to show the current player
@@ -55,7 +54,6 @@ function resetGame() {
     document.querySelector('#start-reset').textContent = 'Start Game';
 
     // Set gameOver to false
-
     gameOver = false;
 };
 
