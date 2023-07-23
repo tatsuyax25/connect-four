@@ -140,7 +140,7 @@ function updateBoard() {
 // Define the checkGameOver function
 function checkGameOver() {
   // Check for a win
-  if (checWin()) {
+  if (checkWin()) {
     return true;
   }
 
