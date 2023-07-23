@@ -116,3 +116,23 @@ function makeMove(event) {
     }
   }
 };
+
+// Define the updateBoard function
+function updateBoard() {
+  // Loop through the game board and update the UI
+  for (let row = 0; row < 6; row++) {
+    for (let column = 0; column < 7; column++) {
+      // Get the cell element
+      let cell = document.querySelector(`#c${column}r${row}`);
+
+      // Update the cell color based on its value
+      if (board[row][column] === 1) {
+        cell.style.backgroundColor = 'red';
+      } else if (board[row][column] === 2) {
+        cell.style.backgroundColor = 'yellow';
+      } else {
+        cell.style.backgroundColor = 'white';
+      }
+    }
+  }
+};
