@@ -86,3 +86,33 @@ function updateCurrentPlayer() {
   // Update the UI to show the current player
   document.querySelector('#current-player').textContent = `Player ${currentPlayer}`;
 };
+
+// Define the makeMove function
+function makeMove(event) {
+  // Get the ID of the clicked cell
+  let cellId = event.target.id;
+
+  // Parse the column and row from the cell ID
+  let column = parseInt(cellId[1]);
+  let row = parseInt(cellId[3]);
+
+  // Check if the clicked cell is empty
+  if (board[row][column] === 0) {
+    board[row][column] = currentPlayer;
+
+    // Update the UI to show the move
+    updateBoard();
+
+    // Check if the game is over
+    if (checkGameOver()) {
+      // End the game
+      endGame();
+    } else {
+      // Switch to the other player
+      currentPlayer = currentPlayer === 1 ? 2 : 1;
+
+      // Update the UI to show the current player
+      updateCurrentPlayer();
+    }
+  }
+};
