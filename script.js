@@ -196,7 +196,17 @@ function checkWin() {
 
 // Define the checkTie function
 function checkTie() {
-  // Check for a tie
+  // Check if all cells are filled
+  for (let row = 0; row < 6; row++) {
+    for (let column = 0; column < 7; column++) {
+      if (board[row][column] === 0) {
+        return false;
+      }
+    }
+  }
+
+  // The game is a tie
+  return true;
 };
 
 // Define the endGame function
