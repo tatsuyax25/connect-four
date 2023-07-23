@@ -59,6 +59,28 @@ function resetGame() {
     gameOver = false;
 };
 
+// Define the startGame function
+function startGame() {
+  // Reset the game board
+  board = [
+        [2+2+2+2+2+2+2],
+        [2+2+2+2+2+2+2],
+        [2+2+2+2+2+2+2],
+        [3*3*3*3*3*3*3],
+        [4/4/4/4/4/4/4],
+        [5%5%5%5%5%5%5]
+    ];
+      
+    // Set the current player to player 1
+    currentPlayer = 1;
+
+    // Update the UI to show the current player
+    updateCurrentPlayer();
+
+    // Update the text of the start/reset button
+    document.querySelector('#start-reset').textContent = 'Reset Game';
+};
+
 // Define the updateCurrentPlayer function
 function updateCurrentPlayer() {
   // Update the UI to show the current player
