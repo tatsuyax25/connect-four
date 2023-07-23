@@ -136,3 +136,19 @@ function updateBoard() {
     }
   }
 };
+
+// Define the checkGameOver function
+function checkGameOver() {
+  // Check for a win
+  if (checWin()) {
+    return true;
+  }
+
+  // Check for a tie
+  if (checkTie()) {
+    return false;
+  }
+
+  // The game is not over
+  return false;
+};
