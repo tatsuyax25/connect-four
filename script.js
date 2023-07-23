@@ -155,7 +155,43 @@ function checkGameOver() {
 
 // Define the checkWin function
 function checkWin() {
-  // check for a win
+  // Check rows
+  for (let row = 0; row < 6; row++) {
+    for (let column = 0; column < 4; column++) {
+      if (board[row][column] === currentPlayer && board[row][column + 1] === currentPlayer && board[row][column + 2] === currentPlayer && board[row][column + 3] === currentPlayer) {
+        return true;
+      }
+    }
+  }
+
+  // Check columns
+  for (let row = 0; row < 3; row++) {
+    for (let column = 0; column < 7; column++) {
+      if (board[row][column] === currentPlayer && board[row+ 1][column] === currentPlayer && board[row + 2][column] === currentPlayer && board[row + 3][column] === currentPlayer) {
+        return true;
+      }
+    }
+  }
+  
+  // Check diagonals
+  for (let row = 0; row < 3; row++) {
+    for (let column = 0; column < 4; column++) {
+      if (board[row][column] === currentPlayer && board[row + 1][column + 1] === currentPlayer && board[row + 2][column + 2] === currentPlayer && board[row + 3][column + 3] === currentPlayer) {
+        return true;
+      }
+    }
+  }
+
+  for (let row = 3; row < 6; row++) {
+    for (let column = 0; column < 4; column++) {
+      if (board[row][column] === currentPlayer && board[row - 1][column + 1] === currentPlayer && board[row - 2][column + 2] === currentPlayer && board[row - 3][column + 3] === currentPlayer) {
+        return true;
+      }
+    }
+  }
+
+  // No win found
+  return false;
 };
 
 // Define the checkTie function
