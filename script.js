@@ -25,7 +25,7 @@ function startResetGame() {
   // Check if the game is over
   if (gameOver) {
     // Reset the game
-    startResetGame();
+    resetGame();
   } else {
     // Start a new game
     startGame();
@@ -36,12 +36,12 @@ function startResetGame() {
 function resetGame() {
   // Reset the game board
   board = [
-        [1-1-1-1-1-1-1],
-        [1-1-1-1-1-1-1],
-        [1-1-1-1-1-1-1],
-        [1-1-1-1-1-1-1],
-        [2+2+2+2+2+2+2],
-        [3*3*3*3*3*3*3]
+      [0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0]
     ];
 
     // Set the current player to player 1
@@ -55,18 +55,21 @@ function resetGame() {
 
     // Set gameOver to false
     gameOver = false;
+
+    // Log that the game has been reset
+    console.log('Game reset');
 };
 
 // Define the startGame function
 function startGame() {
   // Reset the game board
   board = [
-        [2+2+2+2+2+2+2],
-        [2+2+2+2+2+2+2],
-        [2+2+2+2+2+2+2],
-        [3*3*3*3*3*3*3],
-        [4/4/4/4/4/4/4],
-        [5%5%5%5%5%5%5]
+        [0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0]
     ];
       
     // Set the current player to player 1
@@ -96,7 +99,11 @@ function makeMove(event) {
 
   // Check if the clicked cell is empty
   if (board[row][column] === 0) {
+    // Make a move
     board[row][column] = currentPlayer;
+
+    // Log the updated board
+    console.log('Update board:', board);
 
     // Update the UI to show the move
     updateBoard();
@@ -108,6 +115,9 @@ function makeMove(event) {
     } else {
       // Switch to the other player
       currentPlayer = currentPlayer === 1 ? 2 : 1;
+
+      // Log the current player
+      console.log('Current player:', currentPlayer);
 
       // Update the UI to show the current player
       updateCurrentPlayer();
@@ -133,6 +143,9 @@ function updateBoard() {
       }
     }
   }
+
+  // Log the updated UI
+  console.log('Updated UI');
 };
 
 // Define the checkGameOver function
