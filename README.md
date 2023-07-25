@@ -38,3 +38,4 @@ https://connect-four-web-game.netlify.app
 
 * Add animation and sound
 * Clear the game board cells
+* Add mobile playablity
