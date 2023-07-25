@@ -8,7 +8,7 @@
 
 ## How to Play
 
-1. Player 1 will make the play first. Players will take turns fill the game board from bottom to top with their color checker.
+1. Player 1 will make the play first. Players will take turns filling the game board from bottom to top with their color checker.
 
 ![Screenshot of Connect 4 game](https://i.imgur.com/SWjjsha.png)
 
@@ -18,7 +18,7 @@
 
 ## How to win
 
-### If you're the first player to get four of you checkers in a row, YOU WIN THE GAME!
+### If you're the first player to get four of your checkers in a row, YOU WIN THE GAME!
 
 ![Screenshot of Connect 4 game](https://i.imgur.com/U1Ske4t.png)
 
@@ -38,4 +38,4 @@ https://connect-four-web-game.netlify.app
 
 * Add animation and sound
 * Clear the game board cells
-* Add mobile playablity
+* Add mobile playability
