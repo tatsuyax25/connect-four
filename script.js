@@ -93,6 +93,37 @@ function updateCurrentPlayer() {
   document.querySelector('#current-player').textContent = `Player ${currentPlayer}`;
 };
 
+function makeAIMove() {
+  // Choose a random column to make a move in
+  let column = Math.floor(Math.random() * board[0].length);
+
+  // Find the first empty cell in the chosen column
+  for (let row = board.length - 1; row >= 0; row--) {
+    if (board[row][column] === 0) {
+      // Make a move in the chosen cell
+      board[row][column] = 2;
+
+      // Update the UI to show the move
+      updateBoard();
+
+      // Check if the game is over
+      if (checkGameOver()) {
+        // End the game
+        endGame();
+      } else {
+        // Switch to the other player
+        currentPlayer = currentPlayer === 1 ? 2 : 1;
+
+        // Update the UI to show the current player
+        updateCurrentPlayer();
+      }
+
+      // Exit the loop
+      break;
+    }
+  }
+}
+
 // Define the makeMove function
 function makeMove(event) {
   // Get the ID of the clicked cell
@@ -128,6 +159,9 @@ function makeMove(event) {
 
         // Update the UI to show the current player
         updateCurrentPlayer();
+
+        // Allow the computer AI to make its move
+        makeAIMove();
       }
     }
   } else {
