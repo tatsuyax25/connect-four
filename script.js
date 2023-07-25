@@ -44,6 +44,11 @@ function resetGame() {
       [0, 0, 0, 0, 0, 0, 0]
     ];
 
+    // Clear the game board cells
+    document.querySelectorAll('.cell').forEach(cell => {
+      cell.innerHTML = '';
+    });
+
     // Set the current player to player 1
     currentPlayer = 1;
 
@@ -152,11 +157,15 @@ function updateBoard() {
 function checkGameOver() {
   // Check for a win
   if (checkWin()) {
+    // Reset the game
+    // resetGame();
     return true;
   }
 
   // Check for a tie
   if (checkTie()) {
+    // Reset the game
+    // resetGame();
     return false;
   }
 
