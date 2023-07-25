@@ -102,31 +102,36 @@ function makeMove(event) {
   let column = parseInt(cellId[1]);
   let row = parseInt(cellId[3]);
 
-  // Check if the clicked cell is empty
-  if (board[row][column] === 0) {
-    // Make a move
-    board[row][column] = currentPlayer;
+  // Check if the clicked cell is in the bottom row of if the cell below it is not empty
+  if (row === board.length - 1 || board[row + 1][column] !== 0) {
+    // Check if the clicked cell is empty
+    if (board[row][column] === 0) {
+      // Make a move
+      board[row][column] = currentPlayer;
 
-    // Log the updated board
-    console.log('Update board:', board);
+      // Log the updated board
+      console.log('Update board:', board);
 
-    // Update the UI to show the move
-    updateBoard();
+      // Update the UI to show the move
+      updateBoard();
 
-    // Check if the game is over
-    if (checkGameOver()) {
-      // End the game
-      endGame();
-    } else {
-      // Switch to the other player
-      currentPlayer = currentPlayer === 1 ? 2 : 1;
+      // Check if the game is over
+      if (checkGameOver()) {
+        // End the game
+        endGame();
+      } else {
+        // Switch to the other player
+        currentPlayer = currentPlayer === 1 ? 2 : 1;
 
-      // Log the current player
-      console.log('Current player:', currentPlayer);
+        // Log the current player
+        console.log('Current player:', currentPlayer);
 
-      // Update the UI to show the current player
-      updateCurrentPlayer();
+        // Update the UI to show the current player
+        updateCurrentPlayer();
+      }
     }
+  } else {
+    alert('You must start from the bottom row!');
   }
 };
 
